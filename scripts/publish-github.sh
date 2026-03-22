@@ -17,8 +17,8 @@ echo "Building and packing..."
 dotnet pack "$CSPROJ" --configuration Release --output "$OUTPUT_DIR" --no-restore
 
 echo "Publishing to GitHub Packages ($FEED_URL)..."
-dotnet nuget push "$OUTPUT_DIR"/*.nupkg \
-  --source "$FEED_URL" \
+GITHUB_TOKEN="$GITHUB_TOKEN" dotnet nuget push "$OUTPUT_DIR"/*.nupkg \
+  --source "github" \
   --api-key "$GITHUB_TOKEN" \
   --skip-duplicate
 
