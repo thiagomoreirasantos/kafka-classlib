@@ -4,4 +4,6 @@ public interface IKafkaProducer<TKey, TValue>
 {
     Task ProduceAsync(string topic, TKey key, TValue value, CancellationToken cancellationToken = default);
     Task ProduceAsync(TKey key, TValue value, CancellationToken cancellationToken = default);
+    Task ProduceAsync(string topic, TKey key, TValue value, IDictionary<string, string> headers, CancellationToken cancellationToken = default);
+    Task ProduceAsync(TKey key, TValue value, IDictionary<string, string> headers, CancellationToken cancellationToken = default);
 }

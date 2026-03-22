@@ -11,6 +11,9 @@ ENV_FILE="$SCRIPT_DIR/../.env"
 CSPROJ="src/KafkaProducer/KafkaProducer.csproj"
 OUTPUT_DIR="./artifacts"
 
+echo "Cleaning artifacts..."
+rm -f "$OUTPUT_DIR"/*.nupkg
+
 echo "Building and packing..."
 dotnet pack "$CSPROJ" --configuration Release --output "$OUTPUT_DIR" --no-restore
 

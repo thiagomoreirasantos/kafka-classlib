@@ -25,6 +25,19 @@ public class KafkaProducerService<TKey, TValue> : IKafkaProducer<TKey, TValue>, 
     public Task ProduceAsync(TKey key, TValue value, CancellationToken cancellationToken = default)
         => ProduceAsync(_options.DefaultTopic, key, value, cancellationToken);
 
+    public async Task ProduceAsync(string topic, TKey key, TValue value, IDictionary<string, string> headers, CancellationToken cancellationToken = default)
+    {
+        var kafkaHeaders = new Headers();
+        foreach (var header in headers)
+            kafkaHeaders.Add(header.Key, System.Text.Encoding.UTF8.GetBytes(header.Value));
+
+        var message = new Message<TKey, TValue> { Key = key, Value = value, Headers = kafkaHeaders };
+        await _producer.ProduceAsync(topic, message, cancellationToken);
+    }
+
+    public Task ProduceAsync(TKey key, TValue value, IDictionary<string, string> headers, CancellationToken cancellationToken = default)
+        => ProduceAsync(_options.DefaultTopic, key, value, headers, cancellationToken);
+
     private ProducerConfig BuildConfig()
     {
         var config = new ProducerConfig
