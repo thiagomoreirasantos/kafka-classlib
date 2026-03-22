@@ -7,7 +7,7 @@
 
     <!-- NuGet package metadata -->
     <PackageId>KafkaProducer</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>thmsantos</Authors>
     <Description>A simple Kafka producer class library for .NET using Confluent.Kafka.</Description>
     <PackageTags>kafka;producer;confluent;messaging</PackageTags>
