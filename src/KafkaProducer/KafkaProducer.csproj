@@ -7,11 +7,12 @@
 
     <!-- NuGet package metadata -->
     <PackageId>KafkaProducer</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>thmsantos</Authors>
     <Description>A simple Kafka producer class library for .NET using Confluent.Kafka.</Description>
     <PackageTags>kafka;producer;confluent;messaging</PackageTags>
     <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/thiagomoreirasantos/kafka-classlib</RepositoryUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
