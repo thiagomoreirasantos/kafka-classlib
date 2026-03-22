@@ -1,0 +1,11 @@
+# Secrets - NEVER commit these
+.env
+
+# Build artifacts
+artifacts/
+bin/
+obj/
+
+# NuGet
+*.nupkg
+*.snupkg

@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/KafkaProducer/KafkaProducer.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/KafkaProducer.Tests/KafkaProducer.Tests.csproj" />
+  </Folder>
+</Solution>
